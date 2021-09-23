@@ -23,7 +23,7 @@ const MascotaSchema = new mongoose.Schema({
 	descripcion:{type: String, required: true},
 	anunciante:{type: mongoose.Schema.Types.ObjectId, ref:'Usuario'},
 	ubicacion:String
-},{timestamps: true, collection:'mascotas'})
+},{timestamps: true, collection:'mascotas'});
 
 
 MascotaSchema.methods.publicData = () => {
