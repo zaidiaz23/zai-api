@@ -19,26 +19,29 @@ const mongoose = require('mongoose');
 const MascotaSchema = new mongoose.Schema({
 	nombre:{type: String, required: true},
 	categoria:{type:String, enum: ['Perro', 'Gato', 'Otro']},
-	fotos:String,
+	fotos:[String],
 	descripcion:{type: String, required: true},
 	anunciante:{type: mongoose.Schema.Types.ObjectId, ref:'Usuario'},
-	ubicacion:String
+	ubicacion:{ type: String }, 
+	estado:{type: String, enum:['Con familia', 'Disponible', 'Rechazado']},
 },{timestamps: true, collection:'mascotas'});
 
 
-MascotaSchema.methods.publicData = () => {
+MascotaSchema.methods.publicData = function(){
 	return {
-	    id: this.id,
-	    nombre: this.nombre,
-	    categoria: this.categoria,
-	    fotos: this.fotos,
-	    descripcion: this.descripcion,
-	    anunciante: this.anunciante,
-	    ubicacion: this.ubicacion,
-	}
+		id: this.id,
+		nombre: this.nombre,
+		categoria: this.categoria,
+		fotos: this.fotos,
+		descripcion: this.descripcion,
+		anunciante: this.anunciante,
+		ubicacion: this.ubicacion,
+		estado: this.estado
+	};
 };
 
-mongoose.model("Mascota", MascotaSchema);
+
+mongoose.model("Mascota", MascotaSchema)
 
 
 

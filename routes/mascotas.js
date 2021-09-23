@@ -1,6 +1,6 @@
-var router = require('express').Router()
+const router = require('express').Router()
 
-var {
+const {
 	crearMascota,
 	obtenerMascota,
 	modificarMascota,
@@ -17,5 +17,6 @@ router.delete('/:id', eliminarMascota);
 
 module.exports = router;
 
-localhost:4001//v1/mascotas/count/Gato
-localhost:4001//v1/mascotas/id=1244123531
+
+// localhost:4001//v1/mascotas/count/Gato
+// localhost:4001//v1/mascotas/id=1244123531

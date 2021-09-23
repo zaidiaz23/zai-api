@@ -27,7 +27,6 @@ app.use('/v1', require('./routes'));
 
 // Iniciando el servidor
 
-app.listen(process.env.PORT, () => {
-	console.log(`Server listening on port ${process.env.PORT}`)
-})
-
+app.listen(process.env.PORT, function () {
+  console.log('Escuchando en el puerto ' + process.env.PORT);
+});

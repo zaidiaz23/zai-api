@@ -99,7 +99,7 @@ UsuarioSchema.methods.publicData = function() {
   }
 }
 
-mongoose.model("Usuario", UsuarioSchema)
+mongoose.model("Usuario", UsuarioSchema);
 
 
 
